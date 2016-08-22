@@ -21,7 +21,7 @@ func CmdUpdate(c *cli.Context) error {
 }
 
 func updateImage(image string) error {
-	client, _ := docker.NewClient(Endpoint)
+	client, _ := docker.NewClient(GetEndpoint())
 
 	err := client.PullImage(docker.PullImageOptions{Repository: image, OutputStream: os.Stdout}, docker.AuthConfiguration{})
 

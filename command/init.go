@@ -21,7 +21,7 @@ func CmdInit(c *cli.Context) error {
 }
 
 func getImage(image string) error {
-	client, _ := docker.NewClient(Endpoint)
+	client, _ := docker.NewClient(GetEndpoint())
 
 	err := client.PullImage(docker.PullImageOptions{Repository: image, OutputStream: os.Stdout}, docker.AuthConfiguration{})
 

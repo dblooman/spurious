@@ -12,7 +12,7 @@ import (
 
 // CmdPorts for spurious containers
 func CmdPorts(c *cli.Context) error {
-	client, err := docker.NewClient(Endpoint)
+	client, err := docker.NewClient(GetEndpoint())
 	if err != nil {
 		output.Error("Enable to connect to Docker Daemon")
 		return err
